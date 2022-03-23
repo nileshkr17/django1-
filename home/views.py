@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, HttpResponse
 from datetime import datetime
 from home.models import Contact
@@ -13,6 +14,8 @@ def index(request):
 
 def about(request):
     return HttpResponse("this is about page")
+def login(request):
+    return render(request,'login.html')
 
 def contact(request):
     if request.method == "POST":
